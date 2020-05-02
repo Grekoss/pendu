@@ -1,0 +1,44 @@
+.container-finish {
+    background: gold;
+    position: absolute;
+    width: 80vw;
+    top: 25vh;
+    height: 50vh;
+    left: 10vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: solid black 5px;
+    text-align: center;
+}
+
+.container-finish h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.container-finish p {
+    font-size: 1.2em;
+}
+
+.container-finish em {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.container-finish button {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Tablettes -> Ipad */
+@media (min-width: 750px) {
+    .container-finish button {
+        width: 25%;
+        padding: 2em;
+    }
+}

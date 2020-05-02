@@ -1,0 +1,171 @@
+@font-face {
+    font-family: "Frijole";
+    src: url("../fonts/Frijole-Regular.ttf");
+}
+
+body {
+    background: black;
+    margin: 0;
+}
+
+.app {
+    height: calc(100vh - 58px);
+}
+
+h1 {
+    font-family: Frijole, cursive;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.container-letters,
+.container-game {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 1em 0;
+}
+
+.container-word {
+    display: flex;
+    margin: auto 25px;
+}
+
+.container-game {
+    background-color: darkgray;
+    align-items: center;
+}
+
+.container-letters {
+    justify-content: center;
+    max-width: 650px;
+    margin: auto;
+}
+
+.container-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.info {
+    display: none;
+}
+
+.card-letter {
+    font-weight: bold;
+    font-size: 1.5em;
+    display: flex;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: solid black 2px;
+    background: white;
+    height: 25px;
+    width: 25px;
+}
+
+.container-letters .card-letter {
+    margin: 5px;
+}
+
+.card-letter p {
+    margin: auto;
+}
+
+.play {
+    border-color: darkblue;
+    cursor: pointer;
+}
+
+.bad {
+    background-color: red;
+    opacity: 0.5;
+    color: white;
+}
+
+.good {
+    background-color: green;
+    opacity: 0.5;
+    color: white;
+}
+
+.visible {
+    background-color: blue;
+    color: white;
+}
+
+.hidden {
+    background-color: pink;
+    opacity: .5;
+}
+
+.container-image {
+    border: black 2px solid;
+    border-radius: 10px;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    background-image: url("../images/pendu.png");
+}
+
+.finish {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    position: fixed;
+    color: white;
+    text-align: center;
+    background: black;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+}
+
+/* Tablettes -> Ipad */
+@media (min-width: 750px) {
+    h1 {
+        font-family: Frijole, cursive;
+        font-size: 4em;
+        color: white;
+        text-align: center;
+    }
+
+    .card-letter {
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+    }
+
+    .container-words {
+        margin: 0;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .container-words {
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+        justify-content: center;
+    }
+
+    .container-image {
+        margin: 0;
+    }
+
+    .container-words {
+        width: 75%;
+    }
+
+    .info {
+        display: block;
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+}
