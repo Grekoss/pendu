@@ -41,20 +41,28 @@ class App extends Component {
     this.game(e.key.toUpperCase())
   };
 
+  /**
+   * Relancer une partie
+   */
   handleClickRestart = () => {
     const {lettersPlayed} = this.state;
+    // On clean le Set de lettesPlayed
     lettersPlayed.clear();
+    // Recupere le state par défaut.
     this.setState(DEFAULT_STATE);
     this.getLettersInSentences();
     document.addEventListener("keypress", this.handleKeyPress);
   };
 
+  /**
+   * Avoir une phrase aléatoire
+   */
   getLettersInSentences() {
     const sentence = sentencesList[Math.floor(Math.random() * sentencesList.length)].toUpperCase();
     const setAlphabet = new Set(ALPHABET);
 
+    // On récupere toutes les lettres de la phrase dans notre Set
     let setLetters = new Set();
-
     for (let i = 0; i < sentence.length; i++) {
       if (!setLetters.has(sentence[i]) && setAlphabet.has(sentence[i])) {
         setLetters.add(sentence[i])
@@ -68,6 +76,12 @@ class App extends Component {
     })
   };
 
+  /**
+   * Information sur notre status de la lettre pour l'affichage
+   * @param {string} letter Lettre de la case
+   * @param {boolean} player Savoir si c'est une lettre du containaire du joueur
+   * @returns {string} statue Pour l'affichage du CSS
+   */
   getStatus(letter, player) {
     const {lettersPlayed, lettersInSentences, finish} = this.state;
 
@@ -94,6 +108,10 @@ class App extends Component {
     return lettersInSentences.has(letter) ? 'hidden' : '';
   }
 
+  /**
+   * Gestion du jeu
+   * @param {string}letter Lettre choisi par le joueur
+   */
   game(letter) {
     const {lettersInSentences, lettersRemaining, lettersPlayed, errors, limit} = this.state;
     this.beep.play();
@@ -159,7 +177,7 @@ class App extends Component {
         <h1>Le jeu du Pendu</h1>
         <div>
           <div className="container-game">
-            <div className="container-image" style={{backgroundPosition: showImage}} />
+            <div className="container-image" style={{backgroundPosition: showImage}}/>
             <div className="container-words">
               {showSentence}
             </div>

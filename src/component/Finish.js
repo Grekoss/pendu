@@ -8,14 +8,16 @@ class Finish extends Component {
   glass = new Audio(glass);
   cheer = new Audio(cheer);
 
+  /**
+   * Selection le son a jouer
+   * @param {boolean} victory Victoire?
+   */
   playSound(victory) {
     victory ? this.cheer.play() : this.glass.play()
   }
 
   render() {
     const {sentence, onClick, errors, limit} = this.props;
-
-    console.log(limit);
 
     const isVictory = errors < limit ?
       (
